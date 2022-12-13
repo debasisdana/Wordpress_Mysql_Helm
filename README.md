@@ -6,22 +6,16 @@ this is for deployment of Wordpress and Mysql with help of Helmchart
 
 ----Install Helm----
 curl -L https://git.io/get_helm.sh | bash -s -- --version v3.8.2
-
 chmod 600 /var/lib/jenkins/.kube/config
-
 helm repo add stable https://charts.helm.sh/stable
-
 helm search repo stable
 --------Deploying Wordpress----
 cd <root_dir>
 git clone <this repository>
 cd wpws
 -bash-4.2$ helm install wpws wpws
-
 [root@ip-172-31-237-7 ~]# kubectl get po
-
 NAME                             READY   STATUS    RESTARTS   AGE
-
 wordpress-7d6b68bdf8-x2zn4       1/1     Running   0          22s
 
 [root@ip-172-31-237-7 ~]#
